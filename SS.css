@@ -324,7 +324,7 @@ button:hover {
 
 
 .nav-hero {
-    /* background-image: url("./img's/hero3.avif"); */
+    /* background-image: url("hero3.avif"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -878,7 +878,7 @@ area {
     }
 
     .nav-hero {
-        background-image: url("./img's/hero3 cpy.png");
+        background-image: url("hero3 cpy.png");
         background-position: top;
         background-repeat: no-repeat;
         background-size: contain;
