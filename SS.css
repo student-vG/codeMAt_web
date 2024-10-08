@@ -39,7 +39,7 @@ body{
     width: 1400px;
     max-width: 100%;
     /* height: 100vh; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -340,11 +340,14 @@ button:hover {
 
 @media only screen and (max-width: 600px) {
 
+    body{
+        width: 100%;
+    }
     .main_header {
         width: 1400px;
         max-width: 100%;
         /* height: 100vh; */
-        /* margin: 0 auto; */
+        margin: 0 auto;
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -357,7 +360,7 @@ button:hover {
 
     header {
         margin: 10px 0;
-        width: 80%;
+        width: 90%;
         height: 10vh;
         border-radius: 50px;
         position: fixed;
@@ -873,8 +876,11 @@ area {
         bottom: -150px;
 
     }
-
+    body {
+        overflow-x: hidden;
+      }
     .nav-hero {
+        position: relative;
 /*         background-image: url("hero3 cpy.png"); */
         background-image: url("hero3 cpy.png");
         background-position: top;
@@ -886,10 +892,11 @@ area {
     }
 
     .nav-hero .hero-glass {
+        overflow: hidden;
         margin-top: 7.5%;
-        position: relative;
-        left: 1%;
-        width: 100%;
+        position: absolute;
+        left: 3%;
+        width: 95%;
         height: 90%;
         display: flex;
         justify-content: space-evenly;
@@ -952,7 +959,7 @@ area {
         & p {
             width: 100%;
             display: inline;
-            margin-right: 11rem;
+            margin-right: 10rem;
             font-size: 14px;
             text-align: start;
         }
@@ -2008,7 +2015,7 @@ area {
 }
 
 .footer-content form {
-    max-width: 900px;
+    /* max-width: 900px; */
     width: 100%;
     margin-top: 20px;
     line-height: 10px;
@@ -2271,7 +2278,7 @@ textarea:focus {
   }
   
   .mern-stack-links {
-    margin-top: 20px;
+    margin-top: 5px;
   }
   
   .mern-stack-links a {
