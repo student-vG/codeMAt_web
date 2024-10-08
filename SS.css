@@ -6,7 +6,9 @@
     color: #fff;
 }
 
-
+body{
+    width: 100%;
+}
 
 
 * {
@@ -155,11 +157,9 @@ ul .active {
     float: left;
     overflow: hidden;
     cursor: pointer;
-    z-index: 11111;
 }
 
 .dropdown .dropbtn {
-    z-index: 11111;
     font-size: 16px;
     border: none;
     outline: none;
@@ -188,13 +188,12 @@ ul .active {
     backdrop-filter: blur(5px);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 999999;
     cursor: pointer;
 }
 
 .dropdown-content a {
     z-index: 11111;
-
     float: none;
     color: black;
     padding: 10px;
@@ -231,9 +230,9 @@ ul .active {
     top: 0;
     height: fit-content;
     width: 100%;
-    z-index: 11111;
-    background-color: rgba(245, 245, 245, 0.663);
-    backdrop-filter: blur(5px);
+    z-index: 99999;
+    background-color: rgba(245, 245, 245, 0.871);
+    backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     color: rgb(0, 0, 0);
@@ -258,9 +257,7 @@ ul .active {
 }
 
 .slidebar a:hover {
-    width: 100%;
-    padding: 10px 50px;
-    background-color: rgba(211, 211, 211, 0.24);
+    background-color: rgba(162, 162, 162, 0.29);
     color: #00dbde;
 }
 
@@ -347,7 +344,7 @@ button:hover {
         width: 1400px;
         max-width: 100%;
         /* height: 100vh; */
-        margin: 0 auto;
+        /* margin: 0 auto; */
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -505,7 +502,7 @@ button:hover {
     }
 
     .dropdown-content a:hover {
-        z-index: 11111;
+        
         color: #00dbde;
         background-color: #ddd;
     }
@@ -2228,3 +2225,128 @@ textarea:focus {
     font-size: 15px;
 }
 
+
+/* mern satck css */
+.mern-stack-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mern-stack-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .mern-stack-box {
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    height: 50vh;
+    /* width: calc(25% - 20px); */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .mern-stack-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mern-stack-box img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    /* aspect-ratio: 3/2; */
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .mern-stack-links {
+    margin-top: 20px;
+  }
+  
+  .mern-stack-links a {
+    width: max-content;
+    padding: 8px;
+    display: block;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-overflow: clip;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all linear 1s;
+  }
+  
+  .mern-stack-links a:hover {
+    transition: all linear 1s;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
+  }
+
+  .card {
+    /* perspective: 1000px; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* margin: 40px auto; */
+    padding: 45px ;
+}
+
+.card-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform linear 
+     0.6s;
+}
+
+.card-side_front {
+    padding: 25px;
+    color: rgb(5, 5, 5);
+    backdrop-filter: blur(5px);
+    background-color: rgba(155, 155, 155, 0.181);
+    transform: rotateY(0deg);
+    transition: all linear 0.6s;
+
+}
+.card-side_back {
+    padding: 25px;
+    background-color: rgba(155, 155, 155, 0.332);
+    background-image: linear-gradient(120deg, #89f6feaa 0%, #66a6ffb1 100%);
+    transform: scale(0);
+    background-image: linear-gradient(to top, #cd9cf2ad 0%, #f6f3ffb6 100%);
+    opacity: 0;
+    color: #000000;
+    transition: all linear 0.5s;
+}
+
+
+.card:hover .card-side_front {
+    transform: scale(1);
+    opacity: 0.4;
+
+
+}
+
+
+.card:hover .card-side_back {
+    opacity: 1;
+    transform: scale(1);
+}
