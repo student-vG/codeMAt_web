@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CodeMat - A resource hub for learning HTML, CSS, and web development.">
-<meta name="keywords" content="CodeMat, web development, HTML, CSS, tutorials, resources">
+  <meta name="keywords" content="CodeMat, web development, HTML, CSS, tutorials, resources">
   <title>codeMat_web</title>
   <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" 
@@ -19,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="SS.css">
+  <script src="./index-script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,7 +29,7 @@
 <body>
   <div class="main_header">
     <header>
-      <div class="logo">
+      <div class="logo box-anim hidden-ani">
         <a href="index.html"><img src="logo.jpg" alt=""></a>
         <!-- <p>coding materials and resources</p> -->
       </div>
@@ -37,7 +39,7 @@
       </a>
 
       <nav>
-        <ul class="non_slidebar">
+        <ul class="non_slidebar box-anim hidden-ani">
           <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
           <div class="dropdown">
             <button class="dropbtn"><i class="fa-solid fa-address-card"></i> About-us</button>
@@ -47,9 +49,9 @@
             </div>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><i class="fa-solid fa-circle-up"></i> Updates</button>
+            <button class="dropbtn"><i class="fa-regular fa-circle-up"></i></i> Updates</button>
             <div class="dropdown-content">
-              <a href="#mern-stack">mern-stack</a>
+              <a href="#mern-stack">Mern-stack</a>
             </div>
           </div>
           <div class="dropdown">
@@ -62,7 +64,7 @@
             </div>
           </div>
           <li>
-            <div  class="form"
+            <div  class="form box-anim hidden-ani"
             id="search-form">
               <input  id="search-input"  type="text" placeholder=" codeMat Search.." name="search" pattern=".*\S.*" required>
               <button type="submit"  id="search-button" onclick="searchFunction()"><i
@@ -70,47 +72,7 @@
             </div>
           </li>  
       
-<script>
- // Function to handle search functionality
-function searchFunction() {
-  // Get the search query
-  const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
 
-  // Get all the text elements on the page
-  const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
-
-  // Initialize a variable to store the first highlighted element
-  let firstHighlightedElement = null;
-
-  // Loop through each text element
-  textElements.forEach((element) => {
-    // Get the text content of the element
-    const textContent = element.textContent.toLowerCase();
-
-    // Check if the search query is found in the text content
-    if (textContent.includes(searchQuery)) {
-      // Highlight the text content
-      const highlightedText = textContent.replace(new RegExp(searchQuery, 'g'), (match) => {
-        return `<span style="background-color: yellow;">${match}</span>`;
-      });
-      element.innerHTML = highlightedText;
-
-      // If this is the first highlighted element, store it
-      if (!firstHighlightedElement) {
-        firstHighlightedElement = element;
-      }
-    } else {
-      // If the search query is not found, remove any existing highlights
-      element.innerHTML = textContent;
-    }
-  });
-
-  // If there are highlighted elements, scroll to the first one
-  if (firstHighlightedElement) {
-    firstHighlightedElement.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-</script>
 
           
 
@@ -121,27 +83,27 @@ function searchFunction() {
             </svg></li>
         </ul>
         <!-- slidebar -->
-        <ul class="slidebar">
-          <div class=" x-bar hidebar" onclick="hideslidebar()"><a href="#"></a> <svg xmlns="http://www.w3.org/2000/svg"
+        <ul class="slidebar box-anim hidden-ani">
+          <div class=" x-bar hidebar box-anim hidden-ani" onclick="hideslidebar()"><a href="#"></a> <svg xmlns="http://www.w3.org/2000/svg"
               height="30px" viewBox="0 -960 960 960" width="34px" fill="black">
               <path
                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
             </svg></div>
-          <div class="hidebar" class="active"><a href="#"><i class="fa-solid fa-house"></i> Home</a></div>
-          <div class="dropdown hidebar">
+          <div class="hidebar box-anim hidden-ani" class="active"><a href="#"><i class="fa-solid fa-house"></i> Home</a></div>
+          <div class="dropdown hidebar box-anim hidden-ani">
             <button class="dropbtn"><i class="fa-solid fa-address-card"></i> About-us</button>
-            <div class="dropdown-content">
+            <div class="dropdown-content ">
               <a href="#about-us">About_web</a>
               <a href="#contact-me">contact_me</a>
             </div>
           </div>
-          <div class="dropdown">
-            <button class="dropbtn"><i class="fa-solid fa-circle-up"></i> Updates</button>
+          <div class="dropdown hidebar box-anim hidden-ani">
+            <button class="dropbtn"><i class="fa-regular fa-circle-up"></i></i> Updates</button>
             <div class="dropdown-content">
-              <a href="#mern-stack">mern-stack</a>
+              <a href="#mern-stack">Mern-stack</a>
             </div>
           </div>
-          <div class="dropdown">
+          <div class="dropdown box-anim hidden-ani">
             <button class="dropbtn"><i class="fa-solid fa-pager"></i> Pages</button>
             <div class="dropdown-content">
               <a href="#">FrontEnd Development</a>
@@ -189,12 +151,12 @@ function searchFunction() {
       <li></li>
     </ul>
   </div>
-  <section class="nav-hero">
-    <div class="hero-glass">
-      <div class="hg-left">
+  <section class="nav-hero  ">
+    <div class="hero-glass box-anim hidden-ani">
+      <div class="hg-left box-anim hidden-ani">
         <img src="hero3 cpy.png" alt="">
       </div>
-      <div class="hg-right">
+      <div class="hg-right box-anim hidden-ani">
         <p class="hero-title">Your Journey to Success Starts Here</p>
 
         <h2 class="hero-title">Discover Your Dream Programming Language
@@ -205,6 +167,7 @@ function searchFunction() {
       <div class="socials" id="contact">
         <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
         <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
         <a href="#"><i class="fa-brands fa-github"></i></a>
       </div><br>
@@ -215,7 +178,7 @@ function searchFunction() {
   <!-- main start -->
   <main>
     <section class="about-us" id="about-us">
-      <div class="about-us-container">
+      <div class="about-us-container box-anim hidden-ani">
         <h2>About Us</h2>
         <p>CodeMat is a platform dedicated to providing high-quality coding materials and resources to help individuals
           learn and grow in the field of programming. Our team consists of experienced developers and educators who are
@@ -231,12 +194,12 @@ function searchFunction() {
 <!-- mern stack adding -->
 <!-- Add this section after the "About Us" section -->
 <section id="mern-stack">
-  <div class="mern-stack-container">
+  <div class="mern-stack-container box-anim hidden-ani">
     <p align="left" style="font-size: 10px;">#trending</p>
     <h2>MERN Stack Course</h2>
     <p>Get started with the MERN stack and learn from the best YouTube channels.</p>
     <div class="mern-stack-boxes">
-      <div class="mern-stack-box">
+      <div class="mern-stack-box box-anim hidden-ani">
         <div class="card">
           <div class="card-side card-side_front">
             <h3>MongoDB</h3>
@@ -253,7 +216,7 @@ function searchFunction() {
         </div>
       </div>
 
-      <div class="mern-stack-box">
+      <div class="mern-stack-box box-anim hidden-ani">
         <div class="card">
           <div class="card-side card-side_front">
             <h3>Express.js</h3>
@@ -270,7 +233,7 @@ function searchFunction() {
         </div>
       </div>
 
-      <div class="mern-stack-box">
+      <div class="mern-stack-box box-anim hidden-ani">
         <div class="card">
           <div class="card-side card-side_front">
             <h3>React.js</h3>
@@ -287,7 +250,7 @@ function searchFunction() {
         </div>
       </div>
 
-      <div class="mern-stack-box">
+      <div class="mern-stack-box box-anim hidden-ani">
         <div class="card">
           <div class="card-side card-side_front">
             <h3>Node.js</h3>
@@ -309,7 +272,7 @@ function searchFunction() {
     <!-- main part start -->
 
     <Section id="head-of-main">
-      <div class="hm-title-p">
+      <div class="hm-title-p box-anim hidden-ani">
         <h1> Best & Popular Progrmming language's Youtube channel's</h1>
         <p>"Shape Your Future with Smart Study: A Journey of Knowledge, Persistence, and Success."</p>
       </div><br>
@@ -319,10 +282,10 @@ function searchFunction() {
       <!-- learning youtube(in box code) -->
 
       <div class="container" id="pgm">
-        <div class="box-container" id="box-container">
+        <div class="box-container box-anim hidden-ani" id="box-container">
 
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="html2.webp" alt="img of html" class="html-image"><br>
             <h3>HTML5</h3>
             <p>HTML is the standard markup language for creating Web pages.</p><br>
@@ -338,7 +301,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="css.jpg" alt="img of css" class="css-image"><br>
             <h3>CSS3</h3>
             <p>CSS is the language we use to style an HTML document.</p><br>
@@ -354,7 +317,7 @@ function searchFunction() {
             </div>
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="js.jpg" alt="img of jss" class="js-image"><br>
             <h3>JavaScript</h3>
             <p>JavaScript is used for creating dynamic content on websites.</p><br>
@@ -370,7 +333,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="python.webp" alt="img of python" class="py-image"><br>
             <h3>Python</h3>
             <p>Python is used on a server to create web applications.</p><br>
@@ -386,7 +349,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="java.jpg" alt="img of java" class="java-image"><br>
             <h3>Java</h3>
             <p>Java is used to create a website or an application.</p><br>
@@ -402,7 +365,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="php.jpg" alt="img of php" class="php-image"><br>
             <h3>PHP</h3>
             <p>PHP is a popular scripting language. PHP is also used as a back-end language .</p><br>
@@ -417,7 +380,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="c.jpg" alt="img of c" class="c-image"><br>
             <h3>C</h3>
             <p>C is a general-purpose computer programming language.</p><br>
@@ -432,7 +395,7 @@ function searchFunction() {
 
           </div>
 
-          <div class="box">
+          <div class="box box-anim hidden-ani">
             <img src="c++2.jpg" alt="img of c++" class="c++-image"><br>
             <h3>C++</h3>
             <p> c++ is used to create high-performance applications like OS,Games,etc </p><br>
@@ -450,7 +413,7 @@ function searchFunction() {
         </div>
 
         <Section id="head-of-main">
-          <div class="hm-title-p" style="border: none;">
+          <div class="hm-title-p box-anim hidden-ani" style="border: none;">
             <h1>Popular learning Website's</h1>
             <p>"You are the author of your story; make it a tale of determination, resilience, and triumph."</p>
           </div>
@@ -458,8 +421,8 @@ function searchFunction() {
 
         <!-- learning throw webs(box using code) -->
 
-        <div class="box-container-2" id="plw">
-          <div class="webs">
+        <div class="box-container-2 box-anim hidden-ani" id="plw">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.javatpoint.com/"><img src="javatpoint.png"
                 alt="javatpoint-img"></a>
             <a target="_blank" href="https://www.javatpoint.com/">
@@ -469,7 +432,7 @@ function searchFunction() {
             <!-- <a class="button-1"  target="_blank" href="https://www.javatpoint.com/">Click me</a> -->
           </div><br>
 
-          <div class="webs">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.geeksforgeeks.org/"><img src="geeks.jpeg"
                 alt="geeksforgeekst-img"></a>
             <a target="_blank" href="https://www.geeksforgeeks.org/">
@@ -480,7 +443,7 @@ function searchFunction() {
             <!-- <a class="button-1"  target="_blank" href="https://www.geeksforgeeks.org/">Click me</a> -->
           </div><br>
 
-          <div class="webs">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.w3schools.com/"><img src="w3schools.png" alt="w3schools-img"></a>
             <a target="_blank" href="https://www.w3schools.com/">
               <h3>W3Schools</h3>
@@ -489,7 +452,7 @@ function searchFunction() {
             <!-- <a class="button-1"  target="_blank" href="https://www.w3schools.com/">Click me</a> -->
           </div><br>
 
-          <div class="webs">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.tutorialspoint.com/"><img src="tutorialspoint.png"
                 alt="Tutorials Point-img"></a>
             <a target="_blank" href="https://www.tutorialspoint.com/">
@@ -499,7 +462,7 @@ function searchFunction() {
             <!-- <a class="button-1"  target="_blank" href="https://www.tutorialspoint.com/">Click me</a> -->
           </div><br>
 
-          <div class="webs">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.codewithharry.com/"><img src="codewithharry.png"
                 alt="codewithharry-img"></a>
             <a target="_blank" href="https://www.codewithharry.com/">
@@ -509,7 +472,7 @@ function searchFunction() {
             <!-- <a class="button-1"  target="_blank" href="https://www.codewithharry.com/">Click me</a> -->
           </div><br>
 
-          <div class="webs">
+          <div class="webs box-anim hidden-ani">
             <a target="_blank" href="https://www.freecodecamp.org/"><img src="FreeCode.webp"
                 alt="codewithharry-img"></a>
             <a target="_blank" href="https://www.freecodecamp.org/">
@@ -524,7 +487,7 @@ function searchFunction() {
 
         <!-- top websites to practice -->
         <Section id="head-of-main">
-          <div class="hm-title-p">
+          <div class="hm-title-p box-anim hidden-ani">
             <h1>Top 4 Websites for practice coding</h1>
             <p>"You are the author of your story; make it a tale of determination, resilience, and triumph."</p>
           </div><br>
@@ -532,8 +495,8 @@ function searchFunction() {
 
         <!-- boxes -->
         <div class="boxes-container" id="wpc">
-          <div class="f-box">
-            <div class="weblink">
+          <div class="f-box box-anim hidden-ani">
+            <div class="weblink box-anim hidden-ani">
               <a target="_blank" href="https://www.hackerrank.com/"><img src="hackerrank.png" class="weblinkimg"
                   alt="hackerr-rank>"></a>
               <a target="_blank" href="https://www.hackerrank.com/">
@@ -544,7 +507,7 @@ function searchFunction() {
               <a class="button" target="_blank" href="https://www.hackerrank.com/"><span class="text">click me</span>
                 <span>Let's do it</span></a>
             </div>
-            <div class="weblink">
+            <div class="weblink box-anim hidden-ani">
               <a target="_blank" href="https://www.codechef.com/"><img src="codechef.jpeg" class="weblinkimg"
                   alt="codechef-img"></a>
               <a target="_blank" href="https://www.codechef.com/">
@@ -555,7 +518,7 @@ function searchFunction() {
               <a class="button" target="_blank" href="https://www.codechef.com/"><span class="text">click me</span>
                 <span>Let's do it</span></a>
             </div>
-            <div class="weblink">
+            <div class="weblink box-anim hidden-ani">
               <a target="_blank" href="https://leetcode.com/"><img src="leet.webp" class="weblinkimg"
                   alt="codeforces-img"></a>
               <a target="_blank" href="https://leetcode.com/">
@@ -566,7 +529,7 @@ function searchFunction() {
               <a class="button" target="_blank" href="https://leetcode.com/"><span class="text">click me</span>
                 <span>Let's do it</span></a>
             </div>
-            <div class="weblink">
+            <div class="weblink box-anim hidden-ani">
               <a target="_blank" href="https://www.codewars.com/"><img src="codewars.webp" class="weblinkimg"
                   alt="codeforces-img"></a>
               <a target="_blank" href="https://www.codewars.com/">
@@ -581,14 +544,16 @@ function searchFunction() {
         </div>
         <!-- softwares -->
         <Section id="head-of-main">
-          <div class="hm-title-p">
+          <div class="hm-title-p ">
             <h1>Best softwares for use</h1>
             <p>"You are the author of your story; make it a tale of determination, resilience, and triumph."</p>
           </div><br>
         </Section><br><br>
+
+
         <div class="software-container" id="wsu">
           <div class="software-box" id="software-box">
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img src="vscode.png" alt="vscode-img">
               <h2>Visual Studio Code</h2>
               <p>A standalone source code editor that runs on Windows, macOS, and Linux.
@@ -597,7 +562,7 @@ function searchFunction() {
               <a target="_blank" href="https://code.visualstudio.com/download"> Download Link</a>
               <a target="_blank" href="https://youtu.be/bN6DE-4uFNo?si=kbecYfabWWK6u1NC"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img src="pycharm.png" alt="pycharm-img">
               <h2>PyCharm</h2>
               <p>PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux
@@ -605,7 +570,7 @@ function searchFunction() {
               <a target="_blank" href="https://www.jetbrains.com/pycharm/download/#section=mac"> Download Link</a>
               <a href="https://youtu.be/vLqTf2b6GZw?t=325"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img src="NetBeans.png" alt="Netbeans-img">
               <h2>NetBeans</h2>
               <p>NetBeans is a free, open-source Integrated Development Environment for software developers. You can
@@ -614,7 +579,7 @@ function searchFunction() {
               <a target="_blank" href="https://netbeans.apache.org/download/"> Download Link</a>
               <a href="https://youtu.be/2mmc27kLVPc?si=pN0pugaUEY0_tBBa"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img style="width: 85px;" src="ubuntu.png" alt="ubuntu-img">
               <h2>Ubuntu</h2>
               <p>Ubuntu is an open-source software platform that runs everywhere from the PC to the server and the
@@ -622,7 +587,7 @@ function searchFunction() {
               <a target="_blank" href="https://ubuntu.com/download/desktop"> Download Link</a>
               <a href="https://youtu.be/C5deqtXrpgk?si=leCgMo6oTxKhvNnk"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img style=" margin:5px -30px;width: 130px;" src="Wampserver.png" alt="ubuntu-img">
               <h2>Wampserver</h2>
               <p>WampServer is a Windows web development environment. It allows you to create web applications with
@@ -631,7 +596,7 @@ function searchFunction() {
                 Download Link</a>
               <a href="https://youtu.be/M2at7D-lciw?si=Q0ypfF9fAQLYXNWk"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img style="width: 85px;" src="python.png" alt="python-img">
               <h2>Python</h2>
               <p>Python is a general-purpose programming language. It is used in web development, data science, machine
@@ -641,7 +606,7 @@ function searchFunction() {
             </div>
 
 
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img style="width: 85px;" src="anaconda.png" alt="anaconda-img">
               <h2>Anaconda</h2>
               <p>Anaconda is a free and open-source distribution of the Python and R programming languages
@@ -650,7 +615,7 @@ function searchFunction() {
               <a target="_blank" href="https://www.anaconda.com/products/navigator"> Download Link</a>
               <a href="https://youtu.be/bkOEYmyMtEU?si=EFhIYjRJWTZa3dEQ"> Video Tutorial</a>
             </div>
-            <div class="S-box">
+            <div class="S-box box-anim hidden-ani">
               <img style="width: 85px;" src="devc++2.png" alt="devc++-img">
               <h2>Devc++</h2>
               <p>Devc++ is a free C/C++ IDE for Windows. It is a
@@ -674,11 +639,11 @@ function searchFunction() {
  -->
 
 
-    <div class="footer-content" id="contact-me">
+    <div class="footer-content box-anim hidden-ani" id="contact-me">
       <h3 style="text-align: start; margin-top: 80px;">Get in Touch</h3><br>
       <p>Have any questions or want to collaborate? Send me a message!</p><br>
 
-      <form action="https://api.web3forms.com/submit" method="POST">
+      <form action="https://api.web3forms.com/submit" method="POST" class="box-anim hidden-ani">
         <input type="hidden" name="access_key" value="0b9c2290-b326-4210-a354-3e6e6943ff85">
 
         <div class="form_name">
@@ -695,7 +660,7 @@ function searchFunction() {
           <textarea placeholder="Message" required name="message"></textarea>
         </div>
         <input type="hidden" name="redirect" value="https://web3forms.com/success">
-        <div class="submit-btn">
+        <div class="submit-btn box-anim hidden-ani">
           <button>
             <div class="svg-wrapper-1">
               <div class="svg-wrapper">
@@ -716,11 +681,11 @@ function searchFunction() {
   </main><br>
 </body>
 <footer><br>
-  <div class="summary">
+  <div class="summary box-anim hidden-ani">
     <p>&#128420;THANK YOU&#128420;</p><br>
   </div>
 
-  <div class="credits">
+  <div class="credits box-anim hidden-ani">
     <p> &copy; 2024 codeMat. All rights reserved.</p>
     <h4>Website Developed by Vikram G</h4>
     <p class="p-vg"> Thank you all to supported ,visit again </p>
@@ -736,8 +701,47 @@ function searchFunction() {
     const x = document.querySelector(".slidebar");
     x.style.display = 'none'
   }
-
 </script>
-
+<script>
+  // Function to handle search functionality
+ function searchFunction() {
+   // Get the search query
+   const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+ 
+   // Get all the text elements on the page
+   const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+ 
+   // Initialize a variable to store the first highlighted element
+   let firstHighlightedElement = null;
+ 
+   // Loop through each text element
+   textElements.forEach((element) => {
+     // Get the text content of the element
+     const textContent = element.textContent.toLowerCase();
+ 
+     // Check if the search query is found in the text content
+     if (textContent.includes(searchQuery)) {
+       // Highlight the text content
+       const highlightedText = textContent.replace(new RegExp(searchQuery, 'g'), (match) => {
+         return `<span style="background-color: yellow;">${match}</span>`;
+       });
+       element.innerHTML = highlightedText;
+ 
+       // If this is the first highlighted element, store it
+       if (!firstHighlightedElement) {
+         firstHighlightedElement = element;
+       }
+     } else {
+       // If the search query is not found, remove any existing highlights
+       element.innerHTML = textContent;
+     }
+   });
+ 
+   // If there are highlighted elements, scroll to the first one
+   if (firstHighlightedElement) {
+     firstHighlightedElement.scrollIntoView({ behavior: 'smooth' });
+   }
+ }
+ </script>
 
 </html>
