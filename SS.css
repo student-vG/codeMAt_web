@@ -2357,3 +2357,25 @@ textarea:focus {
     opacity: 1;
     transform: scale(1);
 }
+
+
+/*  for scroll animate css style  */
+
+.box-anim {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(50px); /* Elements are shifted downward initially */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .box-anim.visible {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0); /* Reset position when visible */
+  }
+  
+  .hidden-ani {
+    filter: blur(5px);
+    opacity: 0;
+    transform: translateY(50px); /* Apply this while hidden */
+  }
