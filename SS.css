@@ -2016,7 +2016,7 @@ area {
 
 .footer-content form {
     /* max-width: 900px; */
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
     line-height: 10px;
     background-color: var(--ghost);
