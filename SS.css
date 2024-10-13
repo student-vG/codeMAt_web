@@ -2365,7 +2365,7 @@ textarea:focus {
     filter: blur(5px);
     opacity: 0;
     transform: translateY(50px); /* Elements are shifted downward initially */
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   
   .box-anim.visible {
@@ -2376,6 +2376,6 @@ textarea:focus {
   
   .hidden-ani {
     filter: blur(5px);
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(50px); /* Apply this while hidden */
   }
