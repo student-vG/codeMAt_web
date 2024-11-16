@@ -38,7 +38,7 @@
         <p>coding materials z`& resources</p>
       </a>
 
-      <nav>
+      <nav class="nav">
         <ul class="non_slidebar box-anim hidden-ani">
           <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
           <div class="dropdown">
@@ -742,6 +742,36 @@
      firstHighlightedElement.scrollIntoView({ behavior: 'smooth' });
    }
  }
+
+
+  const nav = document.querySelector('.nav')
+window.addEventListener('scroll', fixNav)
+
+function fixNav() {
+    if(window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
  </script>
 
+  <!-- 
+  nav bar fixed style
+ -->
+
+ <style>
+  .nav.active {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a {
+  color: #000;
+}
+
+.nav.active .container {
+  padding: 10px 0;
+}
+</style>
 </html>
