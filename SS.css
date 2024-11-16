@@ -79,12 +79,7 @@ nav {
     align-items: center;
 }
 
-.nav{
-    position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+
 
 header .logo {
     width: 60px;
