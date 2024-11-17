@@ -2306,6 +2306,26 @@ textarea:focus {
 
   }
 
+/* wdc css */
+.wdc2 { 
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr repeat(1,1fr);
+
+}
+@media only screen and (max-width: 600px) {
+    .wdc2 { 
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    
+    }
+   .web-developmewnt iframe{
+    width: 100%;
+    }
+}
+
+
   .card {
     /* perspective: 1000px; */
     width: 100%;
