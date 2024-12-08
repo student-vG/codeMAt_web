@@ -2401,3 +2401,119 @@ textarea:focus {
     opacity: 0.2;
     transform: translateY(50px); /* Apply this while hidden */
   }
+
+
+  /* additional resource */
+#additional-resources {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+    align-content: center;
+
+
+}
+
+.resources-container {
+    display: grid;
+    grid-template-columns: 1fr repeat(2,1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#additional-resources h2 {
+    align-items: center;
+    text-align: center;
+    font-size: 2.1em;
+    margin-bottom: 20px;
+    color: #000000;
+    background: rgb(0,0,0);
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    text-overflow: clip;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; font-size: 1.5em;
+}
+
+.resource {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: all 0.5s linear;
+}
+
+.resource:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource h3 {
+    background-image: linear-gradient(to left, #d7d2cc 0%, #1d2932 100%);
+    text-overflow: clip;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; font-size: 1.5em;
+    margin: 0 0 10px;
+
+    & a span{
+        color: none;
+    }
+}
+
+.resource h3 a:hover {
+    border-bottom: 1px solid rgb(191, 191, 191);
+}
+
+.resource p {
+    font-size: 1em;
+    color: #181818db;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .resource {
+        padding: 10px;
+    }
+
+    .resource h3 {
+        font-size: 1.3em;
+    }
+
+    .resource p {
+        font-size: 0.9em;
+    }
+
+    .resources-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .resource {
+        padding: 8px;
+    }
+
+    .resource h3 {
+        font-size: 1.2em;
+    }
+
+    .resource p {
+        font-size: 0.85em;
+    }
+}
